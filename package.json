@@ -1,16 +1,16 @@
 {
-  "name": "bloc-frontend-project-starter",
+  "name": "what2do",
   "version": "0.0.2",
-  "description": "Starter project for the Bloc Frontend Web Development",
+  "description": "todo project for the Bloc Frontend Web Development",
   "repository": {
     "type": "git",
-    "url": "https://github.com/bloc/bloc-frontend-project-starter"
+    "url": "https://github.com/bloc/what2do"
   },
   "main": "server.js",
   "scripts": {
     "start": "node server.js"
   },
-  "author": "Bloc Inc",
+  "author": "rk Inc",
   "license": "ISC",
   "dependencies": {
     "hapi": "~7.5.0",

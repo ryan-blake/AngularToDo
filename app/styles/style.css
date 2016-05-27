@@ -9,7 +9,7 @@ html {
 }
 
 body {
-    background-image: url(../assets/images/blurred_backgrounds/blur_bg_3.jpg);
+    background-image: url(../assets/images/background.jpg);
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center center;
@@ -71,6 +71,15 @@ color: rgb(233,50,117);
 
 .links-container .navbar-link:active {
 background-color: white;
+}
+
+.todo-form {
+  position: absolute;
+  left: calc(55% - 170px);
+}
+
+.remove {
+ color: green;
 }
 
 .container {

@@ -1,0 +1,16 @@
+<h1> History </h1>
+<section class="history-list container clearfix">
+  <div class="history-list-container column one">
+    <img src="{{ }}">
+        <div class="completed-list-slash">
+            <p>
+              <a class="lists" ui-sref="list">{{ list.title }}</a>
+                <br/>
+                <a ui-sref="lists">{{ list.urgency }}</a>
+                <br/>
+                {{ list.check.true}}
+                <br/>
+            </p>
+        </div>
+    </div>
+</section>

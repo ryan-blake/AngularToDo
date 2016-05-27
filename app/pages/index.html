@@ -1,22 +1,45 @@
 <!DOCTYPE html>
-<html>
-<head lang="en">
+<html ng-app="sampleApp">
+<head>
     <meta charset="UTF-8">
-    <title>What 2 doctype</title>
-    <link rel="shortcut icon" sizes="196x196" href="/assets/images/favicon.gif">
+     <title>What 2 do</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="/styles/style.css">
+    <!-- Angular -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
+    <!-- Firebase -->
+    <script src="https://cdn.firebase.com/js/client/2.2.4/firebase.js"></script>
+    <!-- AngularFire -->
+    <script src="https://cdn.firebase.com/libs/angularfire/1.2.0/angularfire.min.js"></script>
+    <!-- UI router -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.min.js"></script>
     <!-- scripts -->
     <script src="/scripts/app.js"></script>
+    <script src="/scripts/controllers/HomeCtrl.js"></script>
+    <!-- firebase -->
+    <script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyA961kjHiHCIo85vQXLK4lNdjIwwzbRT0g",
+        authDomain: "what2do-4dd97.firebaseapp.com",
+        databaseURL: "https://what2do-4dd97.firebaseio.com",
+        storageBucket: "what2do-4dd97.appspot.com",
+      };
+      firebase.initializeApp(config);
+    </script>
 </head>
 <body>
-    <nav class="navbar"> <!--Nav Bar -->
+ <nav class="navbar">
   <a ui-sref="home" class="logo">
       <img src="assets/images/bloc-logo-white.png" alt="bloc logo white">
-   </a>
+  </a>
    <div class="links-container">
-     <a ui-sref="histroy" class="navbar-link">History</a>
+     <a ui-sref="history" class="navbar-link">History</a>
    </div>
  </nav>
- <ui-view></ui-view>
+
+
 </body>
 </html>
+<ng-include src="'/templates/home.html'"></ng-include>
