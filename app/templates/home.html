@@ -26,7 +26,7 @@
               <!-- todo-box -->
               <!-- arrays are fully sortable and filterable -->
               <li ng-repeat="message in messages | orderBy:orderBy | filter:searchText">
-                {{ message.from }}: {{ message.content }}: {{message.timestamp}}: {{todo.value}}
+                {{ message.from }}: {{ message.content }} {{todo.value}}
                 <!-- {{ todo.from }}: {{ todo.content }}: {{todo.timestamp}} -->
 
                 <!-- delete a message using $remove -->
