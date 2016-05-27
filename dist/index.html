@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html ng-app="sampleApp">
-<head>
+<head lang="en">
+
     <meta charset="UTF-8">
      <title>What 2 do</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -31,15 +32,13 @@
 </head>
 <body>
  <nav class="navbar">
-  <a ui-sref="home" class="logo">
+   <a ui-sref="/" class="logo">
       <img src="assets/images/bloc-logo-white.png" alt="bloc logo white">
-  </a>
-   <div class="links-container">
-     <a ui-sref="history" class="navbar-link">History</a>
-   </div>
+   </a>
+   <span class="login" ng-model="model">
+     <ng-include src="'/templates/login.html'"></ng-include>
+   </span>
  </nav>
-
-
 </body>
 </html>
 <ng-include src="'/templates/home.html'"></ng-include>

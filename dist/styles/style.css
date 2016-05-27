@@ -8,6 +8,11 @@ html {
     font-size: 100%;
 }
 
+p {
+  color: limegreen;
+  text-shadow: 12px 12px 14px #000;
+}
+
 body {
     background-image: url(../assets/images/background.jpg);
     background-repeat: no-repeat;
@@ -73,13 +78,30 @@ color: rgb(233,50,117);
 background-color: white;
 }
 
-.todo-form {
+.title {
+  color: limegreen;
+  text-shadow: 12px 12px 2px #000;
   position: absolute;
   left: calc(55% - 170px);
 }
 
+.clearance {
+  padding-bottom: 10%;
+}
+.todo-form {
+  padding-top: 90px;
+  position: absolute;
+  left: calc(50% - 170px);
+}
+
+.chatbox {
+  /*todo-box*/
+  color: yellow;
+  text-shadow: 2px 2px 4px #000;
+}
+
 .remove {
- color: green;
+ color: grey;
 }
 
 .container {
