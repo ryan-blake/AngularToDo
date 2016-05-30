@@ -1,13 +1,11 @@
 <h1 class="title">What 2 Do</h1>
-<span class="clearance"></span>
-<section class="history-list container clearfix">
-  <div class="history-list-container column one">
-    <img src="{{ }}">
+  <!-- <div class="history-list-container column one"> -->
         <div class="completed-list-slash">
           <div class="todo-form" ng-app="sampleApp" ng-controller="ChatCtrl">
+            <!--  <div class="todo-form" ng-app="todoApp" ng-controller="todoCtrl">  -->
             <p>
-              Sort by:
-              <select ng-model="orderBy">
+              Sort By:
+              <select class="sort-box" ng-model="orderBy">
                 <option>from</option>
                 <option>content</option>
                 <option>timestamp</option>
@@ -15,19 +13,20 @@
               </select>
             </p>
 
-            <p>Search: <input ng-model="searchText"></p>
+            <input class="input-box" placeholder="Search:" ng-model="searchText">
 
             <form ng-submit="addMessage()">
-              <input type="text" ng-model="message">
+              <!-- <form ng-submit="addTodo()"> -->
+              <input class="input-box" placeholder="your todo goes here" type="text" ng-model="message">
+              <!-- <input type="text" ng-model="todo"> -->
               <input type="submit">
             </form>
-
             <ul class="chatbox">
               <!-- todo-box -->
               <!-- arrays are fully sortable and filterable -->
               <li ng-repeat="message in messages | orderBy:orderBy | filter:searchText">
                 {{ message.from }}: {{ message.content }} {{todo.value}}
-                <!-- {{ todo.from }}: {{ todo.content }}: {{todo.timestamp}} -->
+                <!-- {{ todo.from }}: {{ todo.content }} add completion truthy -->
 
                 <!-- delete a message using $remove -->
                 <a class="remove" href="" ng-click="messages.$remove(message)">X</a>
