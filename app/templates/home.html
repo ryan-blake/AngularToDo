@@ -1,41 +1,42 @@
 <h1 class="title">What 2 Do</h1>
-  <!-- <div class="history-list-container column one"> -->
-        <div class="completed-list-slash">
-          <div class="todo-form" ng-app="sampleApp" ng-controller="ChatCtrl">
-            <!--  <div class="todo-form" ng-app="todoApp" ng-controller="todoCtrl">  -->
-            <p>
-              Sort By:
-              <select class="sort-box" ng-model="orderBy">
-                <option>from</option>
-                <option>content</option>
-                <option>timestamp</option>
-                <option>complete</option>
-              </select>
-            </p>
+  <div class="completed-list-slash">
+    <div class="todo-form" ng-app="todoApp" ng-controller="todoCtrl">
+          <p>
+            Sort By:
+            <select class="sort-box" ng-model="orderBy">
+              <option>from</option>
+              <option>content</option>
+              <option>timestamp</option>
+              <option>todo.completed</option>
+              <!-- completed.true only -->
+            </select>
+          </p>
 
-            <input class="input-box" placeholder="Search:" ng-model="searchText">
+          <input class="input-box" placeholder="Search:" ng-model="searchText">
 
-            <form ng-submit="addMessage()">
-              <!-- <form ng-submit="addTodo()"> -->
-              <input class="input-box" placeholder="your todo goes here" type="text" ng-model="message">
-              <!-- <input type="text" ng-model="todo"> -->
-              <input type="submit">
-            </form>
-            <ul class="chatbox">
-              <!-- todo-box -->
-              <!-- arrays are fully sortable and filterable -->
-              <li ng-repeat="message in messages | orderBy:orderBy | filter:searchText">
-                {{ message.from }}: {{ message.content }} {{todo.value}}
-                <!-- {{ todo.from }}: {{ todo.content }} add completion truthy -->
+          <form ng-submit="addTodo()">
+            <input class="input-box" placeholder="enter name" type="text" ng-model="user">
+           </br>
+            <input class="input-box" placeholder="your todo goes here" type="text" ng-model="todo">
+            <input type="submit">
+          </form>
 
-                <!-- delete a message using $remove -->
-                <a class="remove" href="" ng-click="messages.$remove(message)">X</a>
-              </li>
-            </ul>
-            <div>
-
-            <div>
-          </div>
-        </div>
+          <ul ng-repeat="todo in todos | orderBy:orderBy | filter:searchText" class="todo-box">
+            <!-- arrays are fully sortable and filterable -->
+            <!-- <li ng-show="lessThanWeekOld(todo.createdAt)"> -->
+              <!-- <input type="checkbox"
+                     ng-model="todo.completed"
+                     ng-true-value = 'true' ng-false-value = 'false'
+                     value= "{{ todo.completed }}"
+                     class="completed-true"> -->
+                     <input type="checkbox" class="" ng-model="todo.completed" ng-change="$todo.completed.save()">
+              <label for="{{$index}}" ng-checked="{{todo.completed}}" class="completed-true-{{todo.completed}}">
+                {{ todo.from }}: {{ todo.content }}: {{todo.completed}}
+              </label>
+              <!-- delete todo using $remove -->
+              <a class="remove" href="" ng-click="todos.$remove(todo)">X</a>
+            </li>
+          </ul>
     </div>
+  </div>
 </section>

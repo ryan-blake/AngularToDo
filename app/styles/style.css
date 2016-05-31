@@ -119,14 +119,19 @@ background-color: white;
 }
 
 
- .chatbox{
+ .todo-box{
   /*todo-box*/
 color: lime;
+}
+
+.completed-true {
+  text-decoration: line-through;
 }
 
 .remove {
  color: grey;
 }
+
 
 .container {
     margin: 0 auto;
