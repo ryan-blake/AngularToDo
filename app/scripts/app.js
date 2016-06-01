@@ -14,6 +14,6 @@
     }
 
   angular
-   .module('sampleApp', ['ui.router'])
+   .module('toDoApp', ['ui.router'])
    .config(config);
 })();

@@ -1,4 +1,4 @@
-var app = angular.module("2DoApp", ["firebase"]);
+var app = angular.module("toDoApp", ["firebase"]);
 
 app.factory("todoLists", ["$firebaseArray",
 
@@ -32,7 +32,7 @@ app.controller("todoCtrl", ["$scope", "todoLists",
           from: $scope.user,
           content: $scope.todo,
           createdAt: Firebase.ServerValue.TIMESTAMP,
-          completed : false 
+          completed : false
           // completed: $scope.checked
 
 
@@ -47,18 +47,24 @@ app.controller("todoCtrl", ["$scope", "todoLists",
         $scope.todos.$add({
           from: "UserSays",
           content: "Enter what 2 do!",
-          timestamp: Firebase.ServerValue.TIMESTAMP
+          createdAt: Firebase.ServerValue.TIMESTAMP
         });
        }
     });
 
-    // $scope.lessThanWeekOld = function() {
-    //   timeElapsed = Date.now - createdAt;
-    //   if (timeElapsed >=  6048000000)
-    //    return true;
-    //    else
-    //    return false;
-    // };
+
+      $scope.lessThanWeekOld = function(createdAt) {
+          var currentTime = Date.now
+          var timeElapsed = currentTime - this;
+          if (timeElapsed <= 6048000000) {
+            return true
+          }
+          else {
+            return false
+          }
+        };
+
+
   }
 
 

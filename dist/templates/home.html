@@ -6,8 +6,8 @@
             <select class="sort-box" ng-model="orderBy">
               <option>from</option>
               <option>content</option>
-              <option>timestamp</option>
-              <option>todo.completed</option>
+              <option>createdAt</option>
+              <option>completed</option>
               <!-- completed.true only -->
             </select>
           </p>
@@ -23,16 +23,15 @@
 
           <ul ng-repeat="todo in todos | orderBy:orderBy | filter:searchText" class="todo-box">
             <!-- arrays are fully sortable and filterable -->
-            <!-- <li ng-show="lessThanWeekOld(todo.createdAt)"> -->
-              <!-- <input type="checkbox"
-                     ng-model="todo.completed"
-                     ng-true-value = 'true' ng-false-value = 'false'
-                     value= "{{ todo.completed }}"
-                     class="completed-true"> -->
-                     <input type="checkbox" class="" ng-model="todo.completed" ng-change="$todo.completed.save()">
-              <label for="{{$index}}" ng-checked="{{todo.completed}}" class="completed-true-{{todo.completed}}">
-                {{ todo.from }}: {{ todo.content }}: {{todo.completed}}
-              </label>
+            <!-- <li ng-show="lessThanWeekOld(createdAt)"> -->
+
+              <input type="checkbox" ng-checked="todo.completed" ng-model="todo.completed">
+              <span ng-class="todo.completed ? 'completed-true':''">
+                 {{ todo.from }}: {{ todo.content }}: 
+                 <label for="{{$index}}" ng-checked="{{todo.completed}}">
+                 </label>
+              </span>
+
               <!-- delete todo using $remove -->
               <a class="remove" href="" ng-click="todos.$remove(todo)">X</a>
             </li>
