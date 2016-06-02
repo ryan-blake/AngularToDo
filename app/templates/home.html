@@ -1,6 +1,6 @@
 <h1 class="title">What 2 Do</h1>
   <div class="completed-list-slash">
-    <div class="todo-form" ng-app="todoApp" ng-controller="todoCtrl">
+    <div class="todo-form" ng-app="toDoApp" ng-controller="todoCtrl">
           <p>
             Sort By:
             <select class="sort-box" ng-model="orderBy">
@@ -23,12 +23,13 @@
 
           <ul ng-repeat="todo in todos | orderBy:orderBy | filter:searchText" class="todo-box">
             <!-- arrays are fully sortable and filterable -->
-            <!-- <li ng-show="lessThanWeekOld(createdAt)"> -->
+            <!-- <li ng-show="lessThanWeekOld(todo.createdAt)"> -->
 
-              <input type="checkbox" ng-checked="todo.completed" ng-model="todo.completed">
+            <!-- check angular docs or tutorials for ways to use ng-model and ng-checked -->
+              <input ng-click="checkTrue(todo)" type="checkbox" ng-checked="todo.completed" ng-model="todo.completed" ng-true-value= true ng-false-value= false>
               <span ng-class="todo.completed ? 'completed-true':''">
-                 {{ todo.from }}: {{ todo.content }}: 
-                 <label for="{{$index}}" ng-checked="{{todo.completed}}">
+
+                 {{ todo.from }}: {{ todo.content }} {{ todo.createdAt}}
                  </label>
               </span>
 

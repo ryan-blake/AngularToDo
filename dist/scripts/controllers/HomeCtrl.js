@@ -23,22 +23,18 @@ app.controller("todoCtrl", ["$scope", "todoLists",
 
     $scope.todos = todoLists;
 
+    var ref = new Firebase("https://what2do-4dd97.firebaseio.com/" );
 
     $scope.addTodo= function() {
-      // addTodo
-      // $add on a synchronized array is like Array.push() except it saves to the database!
         $scope.todos.$add({
 
           from: $scope.user,
           content: $scope.todo,
           createdAt: Firebase.ServerValue.TIMESTAMP,
-          completed : false
-          // completed: $scope.checked
-
-
+          completed: $scope.completed == false
         });
       $scope.todo = "";
-    };
+     };
 
     // if the messages are empty, add something for fun!
     // disect addition of todo format
@@ -47,26 +43,27 @@ app.controller("todoCtrl", ["$scope", "todoLists",
         $scope.todos.$add({
           from: "UserSays",
           content: "Enter what 2 do!",
-          createdAt: Firebase.ServerValue.TIMESTAMP
+          createdAt: Firebase.ServerValue.TIMESTAMP,
+          completed: true
         });
        }
     });
 
+   $scope.checkTrue = function(todo) {
+       ref.child(todo.$id).update({completed: true});
+   };
 
-      $scope.lessThanWeekOld = function(createdAt) {
-          var currentTime = Date.now
-          var timeElapsed = currentTime - this;
-          if (timeElapsed <= 6048000000) {
-            return true
-          }
-          else {
-            return false
-          }
-        };
-
+    // $scope.lessThanWeekOld = function(createdAt) {
+    //     var currentTime = Date.now
+    //     var timeElapsed = currentTime - this.createdAt;
+    //     if (timeElapsed <= 6048000000) {
+    //       return true
+    //     }
+    //     else {
+    //       return false
+    //     }
+    // };
 
   }
-
-
 
 ]);
