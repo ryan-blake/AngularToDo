@@ -32,13 +32,15 @@
 </head>
 <body>
  <nav class="navbar">
-   <a ui-sref="/" class="logo">
+   <a ui-sref="home" class="logo">
       <img src="assets/images/bloc-logo-white.png" alt="bloc logo white">
    </a>
-   <!-- <span class="login" ng-model="model">
-     <ng-include src="'/templates/login.html'"></ng-include>
-   </span> -->
+   <div class="links-container">
+     <a ui-sref="history" class="navbar-link">history</a>
+   </div>
  </nav>
+ <h1 class="title">What 2 Do</h1>
+
 </body>
 </html>
 <ng-include src="'/templates/home.html'"></ng-include>

@@ -65,6 +65,13 @@ app.controller("todoCtrl", ["$scope", "todoLists",
         }
     };
 
+    // $scope.trueTodo = function(completed) {
+    //   var old = [];
+    //   for(var i =0; i < todoLists.length; i++){
+    //       console.log(todoLists[i])
+    //       }
+    // };
+
   }
 
 ]);
