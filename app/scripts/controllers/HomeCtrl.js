@@ -53,16 +53,17 @@ app.controller("todoCtrl", ["$scope", "todoLists",
        ref.child(todo.$id).update({completed: true});
    };
 
-    // $scope.lessThanWeekOld = function(createdAt) {
-    //     var currentTime = Date.now
-    //     var timeElapsed = currentTime - this.createdAt;
-    //     if (timeElapsed <= 6048000000) {
-    //       return true
-    //     }
-    //     else {
-    //       return false
-    //     }
-    // };
+    $scope.lessThanWeekOld = function(createdAt) {
+        var currentTime = new Date();
+        var msTime = currentTime.getTime();
+        var timeElapsed = msTime - createdAt;
+        if (timeElapsed <= 6048000000) {
+          return true
+        }
+        else {
+          return false
+        }
+    };
 
   }
 

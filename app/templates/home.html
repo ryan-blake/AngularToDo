@@ -11,19 +11,19 @@
               <!-- completed.true only -->
             </select>
           </p>
-
+            <!-- search box -->
           <input class="input-box" placeholder="Search:" ng-model="searchText">
-
+          <!-- User todo input -->
           <form ng-submit="addTodo()">
             <input class="input-box" placeholder="enter name" type="text" ng-model="user">
            </br>
             <input class="input-box" placeholder="your todo goes here" type="text" ng-model="todo">
             <input type="submit">
           </form>
-
+          <!-- display todos -->
           <ul ng-repeat="todo in todos | orderBy:orderBy | filter:searchText" class="todo-box">
             <!-- arrays are fully sortable and filterable -->
-            <!-- <li ng-show="lessThanWeekOld(todo.createdAt)"> -->
+            <li ng-show="lessThanWeekOld(todo.createdAt)">
 
             <!-- check angular docs or tutorials for ways to use ng-model and ng-checked -->
               <input ng-click="checkTrue(todo)" type="checkbox" ng-checked="todo.completed" ng-model="todo.completed" ng-true-value= true ng-false-value= false>
