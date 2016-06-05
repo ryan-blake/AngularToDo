@@ -23,6 +23,8 @@ app.controller("todoCtrl", ["$scope", "todoLists",
 
     $scope.todos = todoLists;
 
+    // $scope.ratings = ["low", "med", "high"]
+
     var ref = new Firebase("https://what2do-4dd97.firebaseio.com/" );
 
     $scope.addTodo= function() {
