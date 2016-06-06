@@ -95,7 +95,16 @@ background-color: white;
   border-radius: 20px;
   box-shadow: 0 1px 0 #ccc inset;
   text-align-last: left;
+  transition: 100ms;
 }
+
+.centered:hover {
+  height: 35px;
+  cursor: pointer;
+  box-shadow: 0 3px 0 #ccc inset;
+
+}
+
 
 .todo-form {
   padding-top: 90px;
@@ -118,7 +127,7 @@ background-color: white;
 .input-box {
     background: #333;
     color: #ccc;
-    width: 200px;
+    width: 180px;
     padding: 6px 15px 6px 35px;
     border-radius: 20px;
     box-shadow: 0 1px 0 #ccc inset;
@@ -126,10 +135,21 @@ background-color: white;
     outline: 0;
 }
 
+.input-box-search{
+    background: #333;
+    color: #ccc;
+    width: 190px;
+    padding: 6px 15px 6px 35px;
+    border-radius: 20px;
+    box-shadow: 0 1px 0 #ccc inset;
+    transition: 500ms all ease;
+    outline: 0;
+    margin-left: 150px;
+}
+
 .input-box:hover {
     width: 270px;
 }
-
 
  .todo-box{
   /*todo-box*/
@@ -145,14 +165,21 @@ color: lime;
   text-decoration: line-through;
 }
 
-.g-hr {
-  color: grey;
+.priority {
+  color: lightblue;
+  display: inline;
+  float: none;
+}
+
+.content {
+  color: lightgreen;
+  display: inline;
+  float: none;
 }
 
 .remove {
  color: grey;
 }
-
 
 .container {
     margin: 0 auto;

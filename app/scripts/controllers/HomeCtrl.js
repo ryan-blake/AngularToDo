@@ -19,9 +19,19 @@ app.controller("todoCtrl", ["$scope", "todoLists",
 
     function($scope, todoLists) {
 
+    $scope.todos = todoLists
+
     $scope.user = "";
 
-    $scope.todos = todoLists;
+    $scope.priority = {
+     repeatSelect: null,
+     availableOptions: [
+       {id: 'high', name: 'high'},
+       {id: 'med', name: 'med'},
+       {id: 'low', name: 'low'}
+     ],
+    };
+
 
     // $scope.ratings = ["low", "med", "high"]
 
@@ -68,21 +78,17 @@ app.controller("todoCtrl", ["$scope", "todoLists",
         }
     };
 
+    $scope.changePriorityDown = function(todo) {
+      ref.child(todo.$id).set({priority: "med"});
+
+    };
+
     // $scope.trueTodo = function(completed) {
     //   var old = [];
     //   for(var i =0; i < todoLists.length; i++){
     //       console.log(todoLists[i])
     //       }
     // };
-    $scope.priority = {
-     repeatSelect: null,
-     availableOptions: [
-       {id: 'high', name: 'high'},
-       {id: 'med', name: 'med'},
-       {id: 'low', name: 'low'}
-     ],
-        selectedOption: {id: '2', name: 'med'}
-    };
 
 
   }

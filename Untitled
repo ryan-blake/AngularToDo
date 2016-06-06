@@ -1,0 +1,21 @@
+----update priority
+
+ng-click="changePriorityDown(todo.priority)"
+
+$scope.changePriorityDown = function(priority) {
+if (ref.child(todo.$id.priority == "high")) {
+ ref.child(todo.$id).update(priority: "med")
+} else {
+ ref.child(todo.$id).update(priority: "med")
+}
+
+};
+
+$scope.changePriorityUp = function(priority) {
+if (ref.child(todo.$id.priority == "low")) {
+ ref.child(todo.$id).update(priority: "med")
+} else {
+ ref.child(todo.$id).update(priority: "high")
+}
+
+};
