@@ -33,7 +33,8 @@ app.controller("todoCtrl", ["$scope", "todoLists",
           from: $scope.user,
           content: $scope.todo,
           createdAt: Firebase.ServerValue.TIMESTAMP,
-          completed: $scope.completed == false
+          completed: $scope.completed == false,
+          priority: $scope.priority
         });
       $scope.todo = "";
      };
@@ -73,7 +74,16 @@ app.controller("todoCtrl", ["$scope", "todoLists",
     //       console.log(todoLists[i])
     //       }
     // };
+    $scope.priority = {
+     repeatSelect: null,
+     availableOptions: [
+       {id: 'high', name: 'high'},
+       {id: 'med', name: 'med'},
+       {id: 'low', name: 'low'}
+     ],
+        selectedOption: {id: '2', name: 'med'}
+    };
+
 
   }
-
 ]);

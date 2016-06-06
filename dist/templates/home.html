@@ -7,9 +7,11 @@
               <option>content</option>
               <option>createdAt</option>
               <option>completed</option>
+              <option>priority</option>
               <!-- completed.true only -->
             </select>
           </p>
+          <hr>
             <!-- search box -->
           <input class="input-box" placeholder="Search:" ng-model="searchText">
           <!-- User todo input -->
@@ -17,8 +19,20 @@
             <input class="input-box" placeholder="enter name" type="text" ng-model="user">
            </br>
             <input class="input-box" placeholder="your todo goes here" type="text" ng-model="todo">
-            <input type="submit">
+
+            <br>
+
+<!-- priority rating dropdown -->
+             <label class="priority-box" for="prioritySelect"> priority: </label>
+               <select class="sort-box" name="prioritySelect" id="prioritySelect" ng-model="priority">
+                 <option ng-repeat="option in priority.availableOptions" value="{{option.id}}">{{option.name}}</option>
+               </select>
+<br>
+            <input class="centered" type="submit">
+            <br>
+            <br>
           </form>
+          <hr class="g-hr">
           <!-- display todos -->
           <ul ng-repeat="todo in todos | orderBy:orderBy | filter:searchText" class="todo-box">
             <!-- arrays are fully sortable and filterable -->
@@ -27,13 +41,9 @@
             <!-- check angular docs or tutorials for ways to use ng-model and ng-checked -->
               <input ng-click="checkTrue(todo)" type="checkbox" ng-checked="todo.completed" ng-model="todo.completed" ng-true-value= true ng-false-value= false>
               <span ng-class="todo.completed ? 'completed-true':''">
-                 {{ todo.from }}: {{ todo.content }}
+                 {{ todo.from }}: {{ todo.content }} :{{todo.priority}}:
                  </label>
               </span>
-              <!-- rating -->
-              <!-- <select>
-                <option ng-repeat="rating in ratings">{{rating}}</option>
-              </select> -->
 
               <!-- delete todo using $remove -->
               <a class="remove" href="" ng-click="todos.$remove(todo)">X</a>
