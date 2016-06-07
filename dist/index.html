@@ -3,7 +3,7 @@
 <head lang="en">
 
     <meta charset="UTF-8">
-     <title>What 2 do</title>
+     <title>What to do</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="/styles/style.css">
     <!-- Angular -->
@@ -33,14 +33,18 @@
 </head>
 <body>
  <nav class="navbar">
+
    <a ui-sref="home" class="logo">
       <img src="assets/images/bloc-logo-white.png" alt="bloc logo white">
    </a>
+
    <div class="links-container">
-     <a ui-sref="history" class="navbar-link">history</a>
+     <a ui-sref="history" class="navbar-link"> history </a>
    </div>
  </nav>
- <h1 class="title">What 2 Do</h1>
+ <div ui-view></div>
+
+ <h1 class="title">What to Do</h1>
 
 </body>
 </html>

@@ -177,6 +177,9 @@ color: lime;
   float: none;
 }
 
+#up_down:hover{
+  cursor: pointer;
+}
 .remove {
  color: grey;
 }

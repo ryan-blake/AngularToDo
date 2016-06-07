@@ -26,9 +26,9 @@ app.controller("todoCtrl", ["$scope", "todoLists",
     $scope.priority = {
      repeatSelect: null,
      availableOptions: [
-       {id: 'high', name: 'high'},
-       {id: 'med', name: 'med'},
-       {id: 'low', name: 'low'}
+       {id: '1', name: 'high'},
+       {id: '2', name: 'med'},
+       {id: '3', name: 'low'}
      ],
     };
 
@@ -55,9 +55,10 @@ app.controller("todoCtrl", ["$scope", "todoLists",
       if ($scope.todos.length === 0) {
         $scope.todos.$add({
           from: "UserSays",
-          content: "Enter what 2 do!",
+          content: "Enter what to do!",
           createdAt: Firebase.ServerValue.TIMESTAMP,
-          completed: true
+          completed: false,
+          priority: "med"
         });
        }
     });
@@ -66,29 +67,36 @@ app.controller("todoCtrl", ["$scope", "todoLists",
        ref.child(todo.$id).update({completed: true});
    };
 
-    $scope.lessThanWeekOld = function(createdAt) {
-        var currentTime = new Date();
-        var msTime = currentTime.getTime();
-        var timeElapsed = msTime - createdAt;
-        if (timeElapsed <= 6048000000) {
-          return true
-        }
-        else {
-          return false
-        }
+  $scope.lessThanWeekOld = function(createdAt) {
+      var currentTime = new Date();
+      var msTime = currentTime.getTime();
+      var timeElapsed = msTime - createdAt;
+      if (timeElapsed <= 6048000000) {
+        return true
+      }
+      else {
+        return false
+      }
+  };
+
+  $scope.changePriorityDown = function(todo) {
+      if (todo.priority == "1") {
+        console.log(todo)
+       ref.child(todo.$id).update({priority: "2"})
+      } else {
+        console.log(todo)
+       ref.child(todo.$id).update({priority: "3"})
+      }
     };
-
-    $scope.changePriorityDown = function(todo) {
-      ref.child(todo.$id).set({priority: "med"});
-
-    };
-
-    // $scope.trueTodo = function(completed) {
-    //   var old = [];
-    //   for(var i =0; i < todoLists.length; i++){
-    //       console.log(todoLists[i])
-    //       }
-    // };
+  $scope.changePriorityUp = function(todo) {
+    if (todo.priority == "3") {
+      console.log(todo)
+     ref.child(todo.$id).update({priority: "2"})
+    } else {
+      console.log(todo)
+     ref.child(todo.$id).update({priority: "1"})
+    }
+  };
 
 
   }
