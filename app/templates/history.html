@@ -1,9 +1,10 @@
-    <div class="todo-form" ng-app="toDoApp" ng-controller="histCtrl">
+    <div class="todo-form" ng-app="toDoApp" ng-controller="todoCtrl">
        <ul ng-repeat="todo in todos | orderBy:orderBy | filter:searchText" class="todo-box">
-          <!-- shows all todos marked true -->
-          <!-- shows all todos older then  -->
-          <li ng-hide="lessThanWeekOld(todo.createdAt)">
-          <li ng-show="!todo.priority">
+
+          <li ng-show="!lessThanWeekOld(todo.createdAt) || todo.completed">
+            <span ng-class="todo.completed ? 'completed-true':''">
+                {{ todo.from }}: <p class="content">{{ todo.content }}</p> <p class="priority"> :{{todo.priority}}: </p>
+            </span>
        </ul>
       </div>
    </div>

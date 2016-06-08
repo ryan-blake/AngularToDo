@@ -9,7 +9,7 @@
      $stateProvider
        .state('home', {
            url: '/',
-           controller: 'HomeCtrl as home',
+           controller: 'todoCtrl as home',
            templateUrl: 'templates/home.html'
        })
 
