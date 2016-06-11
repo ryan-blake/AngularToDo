@@ -1,5 +1,6 @@
   <div class="completed-list-slash">
-    <div class="todo-form" ng-app="toDoApp" ng-controller="todoCtrl">
+<script> console.log("show") </script>
+    <div class="todo-form" ng-controller="homeCtrl">
       <p>
         Sort By:
         <select class="sort-box" ng-model="orderBy">
@@ -11,47 +12,44 @@
         </select>
       </p>
       <hr>
-            <!-- search box -->
-         <input class="input-box-search" placeholder="Search:" ng-model="searchText">
-            <!-- User todo input -->
-         <form ng-submit="addTodo()">
-           <input class="input-box" placeholder="enter name" type="text" ng-model="user">
-           </br>
+ <!-- search box -->
+       <input class="input-box-search" placeholder="Search:" ng-model="searchText">
+ <!-- User todo input -->
+       <form ng-submit="addTodo()">
+          <input class="input-box" placeholder="enter name" type="text" ng-model="user">
+          <br>
              <!-- todo content -->
-           <input class="input-box" placeholder="your todo goes here" type="text" ng-model="todo">
-           <br>
+          <input class="input-box" placeholder="your todo goes here" type="text" ng-model="todo">
+          <br>
              <!-- priority rating dropdown -->
-           <label class="priority-box" for="prioritySelect"> priority: </label>
-            <select class="sort-box" name="prioritySelect" id="prioritySelect" ng-model="priority">
-              <option ng-repeat="option in priority.availableOptions" value="{{option.id}}">{{option.name}}</option>
-            </select>
-            <br>
+          <select class="sort-box" name="prioritySelect" id="prioritySelect" ng-model="priority">
+            <option ng-repeat="option in priority.availableOptions" value="{{option.id}}">{{option.name}}</option>
+          </select>
+          <label class="priority-box" for="prioritySelect">:priority </label>
+          <br>
             <!-- submit button -->
           <input class="centered" type="submit">
-        <br>
-        <br>
-          </form>
-        <hr>
-
-              <!-- display todos -->
-
-              <!-- arrays are fully sortable and filterable -->
-         <ul ng-repeat="todo in todos | orderBy:orderBy | filter:searchText" class="todo-box">
-           <!-- display only todos less than a week old-->
-           <li ng-show="lessThanWeekOld(todo.createdAt) && !todo.completed">
-             <!-- show if less than a week old AND completed == false -->
-            <!-- todo checkbox completed -->
-             <input ng-click="checkTrue(todo)" type="checkbox" ng-checked="todo.completed" ng-model="todo.completed" ng-true-value= true ng-false-value= false>
-             <span ng-class="todo.completed ? 'completed-true':''">
-                 {{ todo.from }}: <p class="content">{{ todo.content }}</p> <p class="priority"> :{{todo.priority}}: </p>
-             </span>
-            </label>
-            <i ng-click="changePriorityUp(todo)" class="material-icons" id="up_down">keyboard_arrow_up</i>
-            <i ng-click="changePriorityDown(todo)" class="material-icons" id="up_down">keyboard_arrow_down</i>
-                <!-- delete todo using $remove -->
-              <a class="remove" href="" ng-click="todos.$remove(todo)">X</a>
-            </li>
-          </ul>
+          <br>
+          <br>
+       </form>
+      <hr>
+    <!-- display todos -->
+    <!-- arrays are fully sortable and filterable -->
+       <ul ng-repeat="todo in todos | orderBy:orderBy | filter:searchText" class="todo-box">
+         <!-- display only todos less than a week old-->
+         <li ng-show="lessThanWeekOld(todo.createdAt) && !todo.completed">
+    <!-- show if less than a week old AND completed == false -->
+    <!-- todo checkbox completed -->
+           <input ng-click="checkTrue(todo)" type="checkbox" ng-checked="todo.completed" ng-model="todo.completed" ng-true-value= true ng-false-value= false>
+           <span ng-class="todo.completed ? 'completed-true':''">
+               {{ todo.from }}: <p class="content">{{ todo.content }}</p> <p class="priority"> :{{todo.priority}}: </p>
+           </span>
+          <i ng-click="changePriorityUp(todo)" class="material-icons" id="up_down">keyboard_arrow_up</i>
+          <i ng-click="changePriorityDown(todo)" class="material-icons" id="up_down">keyboard_arrow_down</i>
+              <!-- delete todo using $remove -->
+            <a class="remove" href="" ng-click="todos.$remove(todo)">X</a>
+          </li>
+        </ul>
      </div>
   </div>
 </section>

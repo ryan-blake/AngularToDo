@@ -15,7 +15,7 @@ app.factory("todoLists", ["$firebaseArray",
 
 
 
-app.controller("todoCtrl", ["$scope", "todoLists",
+app.controller("homeCtrl", ["$scope", "todoLists",
 
     function($scope, todoLists) {
 

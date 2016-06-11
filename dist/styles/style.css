@@ -94,15 +94,15 @@ background-color: white;
   width: 110px;
   padding: 6px 15px 6px 35px;
   border-radius: 20px;
-  box-shadow: 0 1px 0 #ccc inset;
+  box-shadow: 0 1px 1px #ccc inset;
   text-align-last: left;
   transition: 100ms;
 }
 
 .centered:hover {
-  height: 35px;
+  height: 30px;
   cursor: pointer;
-  box-shadow: 0 3px 0 #ccc inset;
+  box-shadow: 0 1px 1px #ccc inset;
 
 }
 

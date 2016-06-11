@@ -6,21 +6,24 @@
          requireBase: false
      });
 
+
      $stateProvider
        .state('home', {
            url: '/',
-           controller: 'todoCtrl as home',
+           controller: 'homeCtrl as home',
            templateUrl: 'templates/home.html'
        })
 
       .state('history', {
         url: '/history',
-        controller: 'HistoryCtrl as history',
+        controller: 'histCtrl as history',
         templateUrl: 'templates/history.html'
-      })
+
+      });
     }
 
-  angular
-   .module('toDoApp', ['ui.router'])
-   .config(config);
+
+angular
+ .module('toDoApp', ['ui.router'])
+ .config(config)
 })();
