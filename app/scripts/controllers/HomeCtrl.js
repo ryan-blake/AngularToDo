@@ -1,3 +1,5 @@
+(function() {
+
 var app = angular.module("toDoApp", ["firebase"]);
 
 app.factory("todoLists", ["$firebaseArray",
@@ -13,11 +15,7 @@ app.factory("todoLists", ["$firebaseArray",
   }
 ]);
 
-
-
-app.controller("homeCtrl", ["$scope", "todoLists",
-
-    function($scope, todoLists) {
+function HomeCtrl($scope, todoLists){
 
     $scope.todos = todoLists
 
@@ -94,6 +92,7 @@ app.controller("homeCtrl", ["$scope", "todoLists",
     }
   };
 
+}
 
-  }
-]);
+app.controller("homeCtrl", ["$scope", "todoLists", HomeCtrl])
+})()
