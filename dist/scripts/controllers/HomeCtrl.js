@@ -95,4 +95,7 @@ function HomeCtrl($scope, todoLists){
 }
 
 app.controller("homeCtrl", ["$scope", "todoLists", HomeCtrl])
-})()
+angular
+  .module('toDoApp', ['ui.router', 'HomeCtrl'])
+
+})();
