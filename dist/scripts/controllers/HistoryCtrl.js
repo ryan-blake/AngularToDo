@@ -13,7 +13,6 @@ app.factory("todoLists", ["$firebaseArray",
   }
 ]);
 
-
 app.controller("histCtrl", ["$scope", "todoLists",
 
     function($scope, todoLists) {
@@ -49,25 +48,6 @@ app.controller("histCtrl", ["$scope", "todoLists",
       }
       else {
         return false
-      }
-    };
-
-   $scope.changePriorityDown = function(todo) {
-      if (todo.priority == "1") {
-        console.log(todo)
-       ref.child(todo.$id).update({priority: "2"})
-      } else {
-        console.log(todo)
-       ref.child(todo.$id).update({priority: "3"})
-      }
-    };
-   $scope.changePriorityUp = function(todo) {
-      if (todo.priority == "3") {
-        console.log(todo)
-       ref.child(todo.$id).update({priority: "2"})
-      } else {
-        console.log(todo)
-       ref.child(todo.$id).update({priority: "1"})
       }
     };
 

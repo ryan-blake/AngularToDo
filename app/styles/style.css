@@ -26,6 +26,10 @@ body {
 
 }
 
+.bigspace {
+ margin-top: 10%;
+}
+
 .navbar {
     position: relative;
     padding: 0.5rem;
@@ -37,6 +41,14 @@ body {
     position: relative;
     left: 2rem;
     cursor: pointer;  /* produces the finger-pointer icon when you hover over the logo */
+}
+
+#history {
+  height: 400px;
+  width: 100%;
+  margin-top: 50%;
+  display: flex;
+  align-items: center;
 }
 
 .navbar .links-container {

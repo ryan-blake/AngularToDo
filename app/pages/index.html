@@ -17,19 +17,11 @@
     <!-- scripts -->
     <script src="/scripts/app.js"></script>
     <script src="/scripts/controllers/HomeCtrl.js"></script>
+
+
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- firebase -->
     <script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
-    <script>
-      // Initialize Firebase
-      var config = {
-        apiKey: "AIzaSyA961kjHiHCIo85vQXLK4lNdjIwwzbRT0g",
-        authDomain: "what2do-4dd97.firebaseapp.com",
-        databaseURL: "https://what2do-4dd97.firebaseio.com",
-        storageBucket: "what2do-4dd97.appspot.com",
-      };
-      firebase.initializeApp(config);
-    </script>
 </head>
 <body>
  <nav class="navbar">
@@ -49,3 +41,7 @@
 </body>
 </html>
 <ng-include src="'/templates/home.html'"></ng-include>
+<br>
+<section id="history">
+<ng-include src="'/templates/history.html'"></ng-include>
+</section>

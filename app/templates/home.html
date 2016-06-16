@@ -32,9 +32,6 @@
         <br>
           </form>
         <hr>
-
-              <!-- display todos -->
-
               <!-- arrays are fully sortable and filterable -->
          <ul ng-repeat="todo in todos | orderBy:orderBy | filter:searchText" class="todo-box">
            <!-- display only todos less than a week old-->
@@ -53,6 +50,6 @@
             </li>
           </ul>
      </div>
-     <ng-include src="'/templates/history.html'"></ng-include>
+
   </div>
 </section>
