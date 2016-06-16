@@ -1,21 +1,16 @@
 (function() {
+  var app = angular.module("toDoApp", ["firebase"]);
 
-var app = angular.module("toDoApp", ["firebase"]);
-
-app.factory("todoLists", ["$firebaseArray",
-
-  function($firebaseArray) {
-    // create a reference to the database where we will store our data
-    // var randomRoomId = Math.round(Math.random() * 100000000);
-    var randomRoomID = 1
-    //  ---room id irrelevant search by user/complete/text/timestamp
-    var ref = new Firebase("https://what2do-4dd97.firebaseio.com/" );
-
+  app.factory("TodoFactory", ["$firebaseArray",
+   function($firebaseArray) {
+    var ref = new Firebase("https://what2do-4dd97.firebaseio.com/");
     return $firebaseArray(ref);
-  }
-]);
+    console.log("hi")
 
-function HomeCtrl($scope, todoLists){
+   }
+  ]);
+
+function HomeCtrl($scope, TodoFactory){
 
     $scope.todos = todoLists
 
@@ -29,7 +24,6 @@ function HomeCtrl($scope, todoLists){
        {id: '3', name: 'low'}
      ],
     };
-
 
     // $scope.ratings = ["low", "med", "high"]
 
@@ -94,8 +88,9 @@ function HomeCtrl($scope, todoLists){
 
 }
 
-app.controller("homeCtrl", ["$scope", "todoLists", HomeCtrl])
+
 angular
-  .module('toDoApp', ['ui.router', 'HomeCtrl'])
+  .module('toDoApp', ['ui.router', 'homeCtrl'])
+  .controller('HomeCtrl', ["$scope", "TodoFactory", HomeCtrl])
 
 })();
