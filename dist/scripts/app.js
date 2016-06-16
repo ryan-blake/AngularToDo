@@ -11,16 +11,15 @@
        .state('home', {
            url: '/',
            controller: 'HomeCtrl as home',
-           templateUrl: 'templates/home.html'
+           templateUrl: '/templates/home.html'
        })
 
       .state('history', {
         url: '/history',
         controller: 'histCtrl as history',
-        templateUrl: 'templates/history.html'
-
-      });
-    }
+        templateUrl: '/templates/history.html'
+      })
+    };
 
 
 angular

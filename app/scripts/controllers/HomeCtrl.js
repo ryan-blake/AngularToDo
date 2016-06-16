@@ -2,10 +2,10 @@
   var app = angular.module("toDoApp", ["firebase"]);
 
   app.factory("TodoFactory", ["$firebaseArray",
-   function($firebaseArray) {
+   ToDoFactory = function($firebaseArray) {
     var ref = new Firebase("https://what2do-4dd97.firebaseio.com/");
-    return $firebaseArray(ref);
     console.log("hi")
+    return $firebaseArray(ref);
 
    }
   ]);
@@ -31,7 +31,6 @@ function HomeCtrl($scope, TodoFactory){
 
     $scope.addTodo= function() {
         $scope.todos.$add({
-
           from: $scope.user,
           content: $scope.todo,
           createdAt: Firebase.ServerValue.TIMESTAMP,
