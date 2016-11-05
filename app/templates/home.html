@@ -21,7 +21,7 @@
            <input class="input-box" placeholder="your todo goes here" type="text" ng-model="todo">
            <br>
              <!-- priority rating dropdown -->
-           <label class="priority-box" for="prioritySelect"> priority: </label>
+           <label class="priority-box" for="prioritySelect">choose priority: </label>
             <select class="sort-box" name="prioritySelect" id="prioritySelect" ng-model="priority">
               <option ng-repeat="option in priority.availableOptions" value="{{option.id}}">{{option.name}}</option>
             </select>

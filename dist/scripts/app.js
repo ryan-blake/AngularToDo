@@ -13,11 +13,6 @@
            templateUrl: 'templates/home.html'
        })
 
-      .state('history', {
-        url: '/history',
-        controller: 'HistoryCtrl as history',
-        templateUrl: 'templates/history.html'
-      })
     }
 
   angular

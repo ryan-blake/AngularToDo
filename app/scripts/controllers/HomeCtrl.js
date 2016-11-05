@@ -23,6 +23,9 @@ app.controller("todoCtrl", ["$scope", "todoLists",
 
     $scope.user = "";
 
+    var arr = [];
+    arr = ['high', 'med', 'low'];
+
     $scope.priority = {
      repeatSelect: null,
      availableOptions: [
@@ -30,6 +33,7 @@ app.controller("todoCtrl", ["$scope", "todoLists",
        {id: '2', name: 'med'},
        {id: '3', name: 'low'}
      ],
+
     };
 
 
@@ -39,7 +43,6 @@ app.controller("todoCtrl", ["$scope", "todoLists",
 
     $scope.addTodo= function() {
         $scope.todos.$add({
-
           from: $scope.user,
           content: $scope.todo,
           createdAt: Firebase.ServerValue.TIMESTAMP,
