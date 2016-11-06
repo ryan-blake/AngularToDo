@@ -16,6 +16,7 @@ module.exports = function(grunt) {
                     './app/styles/**/*.css',
                     './app/pages/**/*.html',
                     './app/templates/**/*.html',
+                    'index.html',
                     'Gruntfile.js'
                 ],
                 tasks: [
